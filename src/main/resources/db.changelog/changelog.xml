@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="changelogs/PROF-103_131_133_134.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF_426.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-433.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-431.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-434.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-528.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-710.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-448.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-963.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-933.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-529.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1140.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-725.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-940.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1177.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1378.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1417.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1417-2.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1861.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1876.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-1955.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2101.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2102.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2102-2.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2194.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2260.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2267.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2253.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2402.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2477.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2022-2672.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2023-P0-12.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/PROF2023-P0-13.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

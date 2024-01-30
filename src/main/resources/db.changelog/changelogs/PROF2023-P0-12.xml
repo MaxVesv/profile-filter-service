@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="PROF2023-P0-12-1" author="idzhambulov@gmail.com">
+        <comment>Create table - degree</comment>
+        <createTable tableName="degree">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="degree_name" type="varchar(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="PROF2023-P0-12-2" author="idzhambulov@gmail.com">
+        <comment>Change structure of main_educations table</comment>
+
+        <dropColumn tableName="main_educations">
+            <column name="present_time"/>
+            <column name="institution"/>
+        </dropColumn>
+
+        <addColumn tableName="main_educations">
+            <column name="gpa" type="decimal(2,2)"/>
+            <column name="mgp" type="int"/>
+            <column name="institution_id" type="bigint"/>
+            <column name="degree_id" type="int"/>
+        </addColumn>
+
+        <addForeignKeyConstraint baseColumnNames="institution_id"
+                                 baseTableName="main_educations"
+                                 constraintName="fk_main_educations_institution_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="institutions"/>
+
+        <addForeignKeyConstraint baseColumnNames="degree_id"
+                                 baseTableName="main_educations"
+                                 constraintName="fk_main_educations_degree_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="degree"/>
+
+        <sql>
+            ALTER TABLE main_educations
+                MODIFY COLUMN faculty VARCHAR (60) NOT NULL,
+                MODIFY COLUMN specialty VARCHAR (120),
+                MODIFY COLUMN period_to DATE NOT NULL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="PROF2023-P0-12-3" author="idzhambulov@gmail.com">
+        <comment>Change structure of courses table</comment>
+
+        <dropColumn tableName="courses">
+            <column name="present_time"/>
+        </dropColumn>
+
+        <addColumn tableName="courses">
+            <column name="gpa" type="decimal(2,2)"/>
+            <column name="mgp" type="int"/>
+        </addColumn>
+
+        <sql>
+            ALTER TABLE courses
+                MODIFY COLUMN school VARCHAR (60),
+                MODIFY COLUMN course_name VARCHAR (80),
+                MODIFY COLUMN description VARCHAR (250),
+                MODIFY COLUMN certificate_url VARCHAR (170),
+                MODIFY COLUMN period_to DATE NOT NULL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="PROF2023-P0-12-4" author="idzhambulov@gmail.com">
+        <comment>Modify institutions table</comment>
+
+        <sql>
+            ALTER TABLE institutions
+                MODIFY COLUMN name VARCHAR (150);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
